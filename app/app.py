@@ -82,7 +82,9 @@ def analyze_sequence(input_fasta):
     with open(logs_html, "w") as logs:
         for names in [stdout, stderr]:
             with open(names) as infile:
+                logs.write("<pre>")
                 logs.write(infile.read())
+                logs.write("</pre>")
             logs.write("\n")
 
     result_html = "/tmp/submission.nb.html"
